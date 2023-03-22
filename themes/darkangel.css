@@ -1,0 +1,15 @@
+.oasismenu[data-theme="darkangel"] {
+    --bg-popup: #3b3d4b;
+    --bg-item-hover: #474b5f;
+    --bg-item-disabled: #9fa0a4;
+    --bg-break: #393c49;
+
+    --border-popup: #6f7285;
+    --shadow-popup: #0004;
+    --scroll-popup: #828C9F;
+
+    --color-item-primary: #b2b2b2;
+    --color-item-secondary: #8c8c8c;
+    --color-item-tertiary: #646464;
+    --color-item-disabled: #7a7b7d;
+}

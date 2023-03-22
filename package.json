@@ -1,0 +1,41 @@
+{
+  "name": "oasismenu",
+  "version": "1.0.1",
+  "description": "OasisMenu is a lightweight and customizable context menu implementation for React.",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "babel --out-dir=dist components",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivamdevs/OasisMenu.git"
+  },
+  "keywords": [
+    "oasismenu",
+    "context",
+    "menu",
+    "react",
+    "oasis",
+    "react-oasismenu",
+    "react-oasis-menu",
+    "contextmenu-oasis",
+    "context-menu"
+  ],
+  "author": "ShivamDevs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shivamdevs/OasisMenu/issues",
+    "email": "shivam0dewangan@gmail.com"
+  },
+  "devDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "homepage": "https://github.com/shivamdevs/OasisMenu#readme"
+}

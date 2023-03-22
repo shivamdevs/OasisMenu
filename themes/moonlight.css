@@ -1,0 +1,15 @@
+.oasismenu[data-theme="moonlight"] {
+    --bg-popup: #3a3a3a;
+    --bg-item-hover: #4d4d4d;
+    --bg-item-disabled: #4d4d4d;
+    --bg-break: #666;
+
+    --border-popup: #666;
+    --shadow-popup: #0004;
+    --scroll-popup: #828C9F;
+
+    --color-item-primary: #FFF;
+    --color-item-secondary: #bbb;
+    --color-item-tertiary: #999;
+    --color-item-disabled: #777;
+}

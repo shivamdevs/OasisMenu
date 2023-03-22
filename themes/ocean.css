@@ -1,0 +1,15 @@
+.oasismenu[data-theme="ocean"] {
+    --bg-popup: #0077be;
+    --bg-item-hover: #0094ff;
+    --bg-item-disabled: #1d3649;
+    --bg-break: #005d99;
+
+    --border-popup: #005d99;
+    --shadow-popup: #0077be88;
+    --scroll-popup: #e1e1e1;
+
+    --color-item-primary: #FFF;
+    --color-item-secondary: #e1e1e1;
+    --color-item-tertiary: #c4c4c4;
+    --color-item-disabled: #5c5c5c;
+}

@@ -1,0 +1,12 @@
+node_modules/
+node_modules
+components/
+components
+example/
+example
+package-lock.json*
+package-lock.json
+.gitignore*
+.gitignore
+.babelrc*
+.babelrc

@@ -1,0 +1,15 @@
+.oasismenu {
+    --bg-popup: #FFF;
+    --bg-item-hover: #BBC;
+    --bg-item-disabled: #EFEFEF;
+    --bg-break: #E6EbF3;
+
+    --border-popup: #CCC;
+    --shadow-popup: #0004;
+    --scroll-popup: #828C9F;
+
+    --color-item-primary: #000;
+    --color-item-secondary: #5C6370;
+    --color-item-tertiary: #999FAC;
+    --color-item-disabled: #9499A7;
+}

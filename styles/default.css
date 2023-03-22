@@ -1,0 +1,223 @@
+.oasismenu,
+.oasismenu * {
+    box-sizing: border-box;
+}
+
+.oasismenu[data-nostyle=false] {
+    background-color: var(--bg-popup);
+    transition: 200ms;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-shadow: 5px 5px 10px 2.5px var(--shadow-popup);
+    border-radius: 5px;
+    border: 1px solid var(--border-popup);
+    overflow: auto;
+    padding-block: 5px;
+
+}
+
+.oasismenu[data-nostyle=false]::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.oasismenu[data-nostyle=false]::-webkit-scrollbar-thumb {
+    background: var(--scroll-popup);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    box-shadow: none;
+    min-height: 40px;
+    min-width: 40px;
+}
+
+.oasismenu[data-nostyle=false]::-webkit-scrollbar-track,
+.oasismenu[data-nostyle=false]::-webkit-scrollbar-track:hover {
+    background: none;
+    border: none;
+}
+
+.oasismenu[data-nostyle=false] .oasisbreak {
+    min-height: 1px;
+    max-height: 1px;
+    height: 1px;
+    background-color: var(--bg-break);
+    width: 100%;
+    margin-block: 5px;
+}
+
+.oasismenu[data-nostyle=false] div:has(> .oasisitem) {
+    padding-inline: 5px;
+}
+
+.oasismenu[data-nostyle=false] .oasisitem {
+    background-color: var(--bg-popup);
+    color: var(--color-item-primary);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    transition: 200ms;
+    gap: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.oasismenu[data-nostyle=false] .oasisitem:disabled {
+    background-color: var(--bg-item-disabled);
+    color: var(--color-item-disabled);
+}
+
+.oasismenu[data-nostyle=false] .oasisitem:not(:disabled).oasishovered {
+    background-color: var(--bg-item-hover);
+    cursor: pointer;
+}
+
+.oasismenu[data-nostyle=false] .oasisicon,
+.oasismenu[data-nostyle=false] .oasisstatus {
+    min-width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.oasismenu[data-nostyle=false] .oasisicon,
+.oasismenu[data-nostyle=false] .oasisstatus,
+.oasismenu[data-nostyle=false] .oasiscontent {
+    white-space: nowrap;
+    word-wrap: initial;
+    overflow: hidden;
+    transition: inherit;
+    text-overflow: ellipsis;
+}
+
+.oasismenu[data-nostyle=false] .oasiscontent {
+    flex: 1;
+    text-align: left;
+}
+
+.oasismenu[data-nostyle=false] .oasisstatus {
+    font-size: 0.9em;
+}
+
+.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisicon,
+.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisstatus {
+    color: var(--color-item-secondary);
+}
+
+.oasismenu[data-nostyle=false] .oasisafter:not(:empty) {
+    margin-left: 30px;
+    white-space: nowrap;
+    font-size: 0.8em;
+    transition: inherit;
+}
+
+.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisafter {
+    color: var(--color-item-tertiary);
+}
+
+.oasismenu[data-nostyle=false]:not(:has(.oasisiconhave)) .oasisicon,
+.oasismenu[data-nostyle=false]:not(:has(.oasisstatushave)) .oasisstatus,
+.oasismenu[data-nostyle=false]:not(:has(.oasisafterhave)) .oasisafter {
+    display: none;
+}
+
+
+.oasismenu[data-nostyle=false]:not(:has(.oasisiconhave):has(.oasisstatushave):has(.oasisafterhave)) .oasisitem {
+    padding-inline: 15px;
+}
+
+
+.oasismenu[data-animation]:not([data-animation=""]) {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.oasismenu[data-animation]:not([data-animation=""])[data-visible=true] {
+    visibility: visible;
+    opacity: 1;
+}
+
+.oasismenu[data-animation=slide-in] {
+    transform: translateY(-10px);
+}
+
+.oasismenu[data-animation=slide-in][data-visible=true] {
+    transform: translateY(0);
+}
+
+.oasismenu[data-animation=flip-in] {
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+.oasismenu[data-animation=flip-in][data-visible=true] {
+    transform: rotateX(0);
+}
+
+.oasismenu[data-animation=drop-in] {
+    transform: translateY(-100%);
+}
+
+.oasismenu[data-animation=drop-in][data-visible=true] {
+    transform: translateY(0);
+}
+
+.oasismenu[data-animation=bounce-in] {
+    transform: translateY(-500px);
+}
+
+.oasismenu[data-animation=bounce-in][data-visible=true] {
+    animation: oasismenu-bounce-in 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes oasismenu-bounce-in {
+    0% {
+        transform: translateY(-500px);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    38% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    55% {
+        transform: translateY(-65px);
+        animation-timing-function: ease-in;
+    }
+
+    72% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+    }
+
+    81% {
+        transform: translateY(-28px);
+        animation-timing-function: ease-in;
+    }
+
+    90% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        transform: translateY(-8px);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+    }
+}
