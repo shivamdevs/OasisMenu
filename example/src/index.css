@@ -1,0 +1,20 @@
+.box {
+    --fix: min(100px, 5vh);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.top {
+    inset: var(--fix) var(--fix) 53vh;
+}
+.bottom {
+    inset: 53vh var(--fix) var(--fix);
+}
