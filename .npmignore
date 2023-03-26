@@ -4,6 +4,8 @@ components/
 components
 example/
 example
+documentation/
+documentation
 package-lock.json*
 package-lock.json
 .gitignore*

@@ -64,7 +64,7 @@ function Child({ child, data = {} }) {
         const triggerObject = (e) => {
             const object = getStorage(name);
 
-            if (onTrigger && onTrigger(e) === false) return;
+            if (onTrigger && onTrigger(e, object) === false) return;
             if (!object?.popup?.children?.length) return;
 
             e.preventDefault();

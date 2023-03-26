@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 declare module 'oasismenu' {
-  interface OasisMenuProps {
+  export interface OasisMenuProps {
     name: string;
     children?: React.ReactNode;
     className?: string;
@@ -26,7 +26,7 @@ declare module 'oasismenu' {
     onSelect?: ((data: any, object: any) => void) | null;
   }
 
-  interface OasisMenuItemProps {
+  export interface OasisMenuItemProps {
     content?: React.ReactNode;
     children?: React.ReactNode;
     data?: any;
@@ -42,19 +42,20 @@ declare module 'oasismenu' {
     onClick?: ((data: any, object: any) => void) | null;
   }
 
-  interface OasisMenuBreakProps {
+  export interface OasisMenuBreakProps {
     className?: string;
   }
 
-  interface OasisMenuBlockProps {
+  export interface OasisMenuBlockProps {
     children?: React.ReactNode;
   }
 
-  interface OasisMenuTriggerProps {
+  export interface OasisMenuTriggerProps {
     children?: React.ReactNode;
     name: string;
+    toggle?: boolean;
     trigger?: 'click' | 'dblclick' | 'mousedown' | 'mouseenter' | 'mouseleave' | 'keydown' | 'keyup' | 'submit' | 'change' | 'load' | 'contextmenu';
-    onTrigger?: (event: React.MouseEvent) => void;
+    onTrigger?: (event: React.MouseEvent, object: any) => void;
     placement?: 'top-left' | 'top' | 'top-right' | 'right-top' | 'right' | 'right-bottom' | 'bottom-right' | 'bottom' | 'bottom-left' | 'left-bottom' | 'left' | 'left-top' | 'center';
     inset?: boolean;
     shiftDistance?: number;
