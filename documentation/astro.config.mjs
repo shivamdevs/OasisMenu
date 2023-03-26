@@ -6,5 +6,5 @@ export default defineConfig({
 	integrations: [preact(),react()],
 	site: `https://docs.myoasis.tech`,
 	base: `/oasismenu`,
-	outDir: `/oasismenu`,
+	outDir: `./dist/oasismenu`,
 });
