@@ -5,5 +5,6 @@ import react from '@astrojs/react';
 export default defineConfig({
 	integrations: [preact(),react()],
 	site: `https://docs.myoasis.tech`,
-	base: `/oasismenu`
+	base: `/oasismenu`,
+	outDir: `/oasismenu`,
 });
