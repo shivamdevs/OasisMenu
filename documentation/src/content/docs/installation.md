@@ -88,4 +88,4 @@ To switch to a different theme in OasisMenu, simply import the corresponding CSS
 import "oasismenu/themes/darkangel.css";
 ```
 
-We offer a variety of themes that you can use to customize your OasisMenu. You can find them all on [Themes](themes) page.
+We offer a variety of themes that you can use to customize your OasisMenu. You can find them all on [Themes](customization/themes) page.

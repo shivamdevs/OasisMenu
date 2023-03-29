@@ -1,5 +1,5 @@
 ---
-import { SIDEBAR } from '../../consts';
+import { SIDEBAR, PROJECT_BASE_URL } from '../../consts';
 
 type Props = {
 	currentPage: string;
@@ -21,7 +21,7 @@ const sidebar = SIDEBAR;
 						<h2 class="nav-group-title">{header}</h2>
 						<ul>
 							{children.map((child) => {
-								const url = Astro.site?.pathname + "oasismenu/" + child.link;
+								const url = Astro.site?.pathname + PROJECT_BASE_URL + "/" + child.link;
 								return (
 									<li class="nav-link">
 										<a href={url} class="" aria-current={([url, url.slice(1)].includes(currentPageMatch)) ? 'page' : false}>

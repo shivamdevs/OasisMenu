@@ -55,14 +55,14 @@ The `OasisMenuBlock` component accepts the following props:
 | ---- | ---- | ------- | ----------- |
 | children | Node | null | The content that will act as the trigger for the popup menu. |
 | name | string (required) | - | A unique identifier for the trigger element. This is used to associate the trigger with the corresponding popup menu. |
-| toggle | boolean | false | If true, the popup menu will open on the first trigger of the trigger element and close on the second. |
+| toggle | boolean | false | If `true`, the popup menu will open on the first trigger of the trigger element and close on the second. |
 | trigger | string | contextmenu | The type of event that will trigger the opening of the popup menu. Available options are: 'click', 'dblclick', 'mousedown', 'mouseenter', 'mouseleave', 'keydown', 'keyup', 'submit', 'change', 'load', 'contextmenu'. |
 | onTrigger | function | null | A callback function that will be called when the trigger element is clicked or activated using the specified trigger event. |
 | placement | string | null | The position of the popup menu relative to the trigger element. Available options are: 'top-left', 'top', 'top-right', 'right-top', 'right', 'right-bottom', 'bottom-right', 'bottom', 'bottom-left', 'left-bottom', 'left', 'left-top', 'center'. |
-| inset | boolean | false | If true, the popup menu will be displayed inside the trigger element. This only works if a `placement` is specified. |
+| inset | boolean | false | If `true`, the popup menu will be displayed inside the trigger element. This only works if a `placement` is specified. |
 | shiftDistance | number | 10 | The distance in pixels between the trigger element and the popup menu. This can be used to adjust the placement of the popup menu if needed. This only works if a `placement` is specified. |
 
-## 'onTrigger' Method
+## onTrigger
 
 The `onTrigger` method is used to handle events that occur before the popup is created. It takes in a performed `event` and popup `object` as arguments.
 

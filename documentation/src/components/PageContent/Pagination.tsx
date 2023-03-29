@@ -1,5 +1,6 @@
 import type { FunctionalComponent } from 'preact';
 import { useState } from 'preact/hooks';
+import { PROJECT_BASE_URL } from "../../consts";
 
 type SidebarItem = {
   text: string;
@@ -28,7 +29,7 @@ const Pagination: FunctionalComponent<PaginationProps> = ({ sidebar, currentUrl,
 
     const pages = Object.values(sidebar).flatMap(arr => arr);
     pages.forEach((page, index) => {
-      const url = astroPath + "oasismenu/" + page.link;
+      const url = astroPath + `${PROJECT_BASE_URL}/${page.link}`;
       if ([url, url.slice(1)].includes(currentUrl)) {
         current = page;
         previous = pages[index - 1] || null;
@@ -46,7 +47,7 @@ const Pagination: FunctionalComponent<PaginationProps> = ({ sidebar, currentUrl,
   return (
     <nav className="footnation">
       {previousPage && (
-        <a className="footprev" href={astroPath + "oasismenu/" + previousPage.link}>
+        <a className="footprev" href={`${astroPath}${PROJECT_BASE_URL}/${previousPage.link}`}>
           <i className="fas fa-arrow-left"></i>
           <div className="footlabel">
             <span>Previous Page</span>
@@ -55,7 +56,7 @@ const Pagination: FunctionalComponent<PaginationProps> = ({ sidebar, currentUrl,
         </a>
       )}
       {nextPage && (
-        <a className="footnext" href={astroPath + "oasismenu/" + nextPage.link}>
+        <a className="footnext" href={`${astroPath}${PROJECT_BASE_URL}/${nextPage.link}`}>
           <i className="fas fa-arrow-right"></i>
           <div className="footlabel">
             <span>Next Page</span>

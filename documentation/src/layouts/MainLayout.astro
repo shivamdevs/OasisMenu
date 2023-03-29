@@ -9,7 +9,7 @@ import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
 import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
 import Footer from "../components/Footer/Footer.astro";
 import Pagination from "../components/PageContent/Pagination";
-import { GITHUB_EDIT_URL, SIDEBAR, SITE } from "../consts";
+import { GITHUB_EDIT_URL, SIDEBAR, SITE, PROJECT_BASE_URL } from "../consts";
 import DocHeader from "../components/DocHeader/DocHeader.astro";
 
 type Props = CollectionEntry<"docs">["data"] & {
@@ -23,7 +23,7 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
 const githubEditUrl = `${GITHUB_EDIT_URL}/${(() => {
 	const split = currentFile.split("/");
 	for (let i = 0; i < split.length; i++)
-		if (split[i] === "oasismenu") {
+		if (split[i] === PROJECT_BASE_URL) {
 			split.splice(i, 1);
 			break;
 		}

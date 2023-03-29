@@ -62,6 +62,8 @@
 	--theme-text-accent: hsla(var(--color-blue), 1);
 	--theme-accent-opacity: 0.15;
 	--theme-divider: hsla(var(--color-gray-95), 1);
+	--theme-table-row: hsla(var(--color-gray-70), 0.5);
+	--theme-scroll: hsla(var(--color-gray-80), 0.75);
 	--theme-text: hsla(var(--color-gray-10), 1);
 	--theme-text-light: hsla(var(--color-gray-40), 1);
 	/* @@@: not used anywhere */
@@ -91,20 +93,22 @@ body {
 	--theme-accent-opacity: 0.15;
 	--theme-accent: hsla(var(--color-blue), 1);
 	--theme-text-accent: hsla(var(--color-blue), 1);
-	--theme-divider: hsla(var(--color-gray-10), 1);
+	--theme-divider: hsla(var(--color-gray-20), 1);
+	--theme-table-row: hsla(var(--color-gray-5), 0.7);
+	--theme-scroll: hsla(var(--color-gray-50), 0.75);
 	--theme-text: hsla(var(--color-gray-90), 1);
 	--theme-text-light: hsla(var(--color-gray-80), 1);
 
 	/* @@@: not used anywhere */
 	--theme-text-lighter: hsla(var(--color-gray-40), 1);
-	--theme-bg: hsla(215, 28%, 17%, 1);
+	--theme-bg: hsl(225, 15%, 10%);
 	--theme-bg-hover: hsla(var(--color-gray-40), 1);
 	--theme-bg-offset: hsla(var(--color-gray-5), 1);
-	--theme-code-inline-bg: hsla(var(--color-gray-10), 1);
+	--theme-code-inline-bg: hsla(var(--color-gray-20), 1);
 	--theme-code-inline-text: hsla(var(--color-base-white), 100%, 1);
-	--theme-code-bg: hsla(var(--color-gray-5), 1);
+	--theme-code-bg: hsla(var(--color-gray-10), 1);
 	--theme-code-text: hsla(var(--color-base-white), 100%, 1);
-	--theme-navbar-bg: hsla(215, 28%, 17%, 1);
+	--theme-navbar-bg: var(--theme-bg);
 	--theme-selection-color: hsla(var(--color-base-white), 100%, 1);
 	--theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
 

@@ -1,4 +1,6 @@
 ---
+import { PROJECT_BASE_URL } from '../consts';
+
 import '../styles/theme.css';
 import '../styles/index.css';
 ---
@@ -7,8 +9,9 @@ import '../styles/index.css';
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+<base href={PROJECT_BASE_URL}>
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href={`/${PROJECT_BASE_URL}/favicon.svg`} />
 
 <link rel="sitemap" href="/sitemap.xml" />
 

@@ -1,0 +1,63 @@
+---
+type Props = {
+	showAtUrl: string;
+	currentUrl: string;
+};
+
+const { showAtUrl, currentUrl } = Astro.props;
+
+---
+
+{showAtUrl === currentUrl && <>
+<p id="contributors-list" class="contributors">Getting contributors...</p>
+<script is:inline load:client>
+	const id = document.getElementById("contributors-list");
+	function setContributors(contributors) {
+		if (contributors.length !== 0) {
+			id.innerHTML = "";
+			const ul = document.createElement("ul");
+			for (let i = 0; i < contributors.length; i++) {
+				const contributor = contributors[i];
+				const li = document.createElement("li");
+				const an = document.createElement("a");
+				const im = document.createElement("img");
+				an.href = contributor.html_url;
+				an.target = "_blank";
+				an.rel = "noopener noreferrer";
+				im.alt = contributor.login;
+				im.src = contributor.avatar_url;
+				an.appendChild(im);
+				li.appendChild(an);
+				ul.appendChild(li);
+			}
+			id.appendChild(ul);
+		} else {
+			failFetch("We welcome contributions from the community to help us improve and enhance OasisMenu. Join us on GitHub to become a contributor!");
+		}
+	}
+	function failFetch(html) {
+		id.innerHTML = html;
+	}
+	fetch('https://api.github.com/repos/shivamdevs/OasisMenu/contributors').then((response) => response.json()).then((data) => setContributors(data)).catch((error) => failFetch(`Failed to get contributors.`) && console.error(error));
+</script>
+
+<style is:global>
+	.contributors > ul {
+		list-style: none;
+	}
+	.contributors > ul > li {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 0;
+		margin-left: -10px;
+	}
+	.contributors > ul > li > a {
+		display: inline-block;
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		border: 4px solid var(--theme-box-border);
+		background-color: var(--theme-bg-offset);
+	}
+</style>
+</>}

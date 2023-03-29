@@ -18,6 +18,8 @@ export const GITHUB_EDIT_URL = `https://github.com/shivamdevs/OasisMenu/tree/mai
 
 export const COMMUNITY_INVITE_URL = `https://myosis.tech/invite`;
 
+export const PROJECT_BASE_URL = "oasismenu";
+
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
 	indexName: 'XXXXXXXXXX',
@@ -37,6 +39,10 @@ export const SIDEBAR: Sidebar = {
 		{
 			text: 'Installation',
 			link: 'installation'
+		},
+		{
+			text: 'Demo Examples',
+			link: 'demo'
 		},
 		{
 			text: 'Components',
@@ -65,14 +71,28 @@ export const SIDEBAR: Sidebar = {
 			link: 'components/oasismenubreak'
 		},
 	],
-	'Examples': [
+	'Customization': [
 		{
-			text: 'Demo',
-			link: 'examples'
+			text: 'Styling',
+			link: 'customization'
 		},
 		{
-			text: 'Git Clone',
-			link: 'examples/git'
+			text: 'Themes',
+			link: 'customization/themes'
+		},
+		{
+			text: 'Animations',
+			link: 'customization/animations'
+		},
+	],
+	'Support': [
+		{
+			text: 'FAQ',
+			link: 'support'
+		},
+		{
+			text: 'Limitations',
+			link: 'support/limitations'
 		},
 	],
 };

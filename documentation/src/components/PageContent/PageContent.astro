@@ -1,8 +1,9 @@
 ---
-import type { MarkdownHeading } from 'astro';
-import MoreMenu from '../RightSidebar/MoreMenu.astro';
-import TableOfContents from '../RightSidebar/TableOfContents';
-import ContributorsList from './explicit/ContributorsList';
+import type { MarkdownHeading } from "astro";
+import MoreMenu from "../RightSidebar/MoreMenu.astro";
+// import TableOfContents from "../RightSidebar/TableOfContents";
+import Contributors from "./explicit/Contributors.astro";
+import { PROJECT_BASE_URL } from "../../consts";
 
 type Props = {
 	title: string;
@@ -14,7 +15,7 @@ const { title, headings, githubEditUrl } = Astro.props;
 
 const currentPage = Astro.url.pathname;
 
-const currentUrl = currentPage.endsWith('/')
+const currentUrl = currentPage.endsWith("/")
 	? currentPage.slice(1, -1)
 	: currentPage.slice(1);
 ---
@@ -22,16 +23,63 @@ const currentUrl = currentPage.endsWith('/')
 <article id="article" class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
-		<nav class="block sm:hidden">
+		<!-- <nav class="block sm:hidden">
 			<TableOfContents client:media="(max-width: 50em)" headings={headings} />
-		</nav>
+		</nav> -->
 		<slot />
-		<ContributorsList currentUrl={currentUrl} showAtUrl="oasismenu/getting-started" />
+		<Contributors
+			currentUrl={currentUrl}
+			showAtUrl={`${PROJECT_BASE_URL}/getting-started`}
+		/>
 	</section>
 	<nav class="block sm:hidden">
 		<MoreMenu editHref={githubEditUrl} />
 	</nav>
 </article>
+
+<script is:inline>
+	document
+		.querySelectorAll(".content :is(h1, h2, h3, h4, h5, h6)")
+		.forEach((tag) => {
+			if (tag.id) {
+				const a = document.createElement("a");
+				a.href = "#" + tag.id;
+				a.innerHTML = "#";
+				a.className = "permalink";
+				tag.innerHTML = `<span>${tag.innerHTML}</span>`;
+				tag.prepend(a);
+			}
+		});
+</script>
+
+<style is:global>
+	.permalink {
+		color: #01eefe;
+		text-decoration: none;
+		font-style: italic;
+		font-weight: 700;
+		padding-inline-end: 0.6rem;
+		display: inline-block;
+		line-height: 1em;
+		height: 1em;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6):not(:hover) > .permalink {
+		visibility: hidden;
+	}
+	:is(h1, h2, h3, h4, h5, h6):has(> .permalink) {
+		margin-inline-start: -0.4em;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.content p {
+		padding-inline-start: 1rem;
+	}
+	.content :is(ul, ol) {
+		padding-inline-start: 2.25rem;
+	}
+</style>
 
 <style>
 	.content {

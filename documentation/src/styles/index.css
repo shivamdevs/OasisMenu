@@ -243,7 +243,7 @@ table {
 /* Zebra striping */
 thead tr,
 tbody tr:nth-of-type(even) {
-	background: var(--theme-divider);
+	background: var(--theme-table-row);
 }
 th {
 	background: var(--color-black);
@@ -370,6 +370,12 @@ h2.heading {
 .header-link.depth-4 {
 	padding-inline-start: 3rem;
 }
+.header-link.depth-5 {
+	padding-inline-start: 4rem;
+}
+.header-link.depth-6 {
+	padding-inline-start: 5rem;
+}
 
 /* Screenreader Only Text */
 .sr-only {
@@ -424,7 +430,7 @@ h2.heading {
 }
 
 *::-webkit-scrollbar-thumb {
-	background: #727888;
+	background: var(--theme-scroll);
 	background-clip: padding-box;
 	border: 7px solid transparent;
 	border-radius: 10px;

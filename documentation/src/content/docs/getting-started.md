@@ -19,9 +19,9 @@ Here are some key features of OasisMenu:
 
 ## Try OasisMenu
 
-f you want to see how OasisMenu works, you can explore the demo available on the [Examples Section](examples). This demo highlights the various customization options provided by the package, including changes to the background color, font size, and icon color.
+f you want to see how OasisMenu works, you can explore the demo available on the [Examples Section](demo). This demo highlights the various customization options provided by the package, including changes to the background color, font size, and icon color.
 
-Another way to experiment with OasisMenu is to clone the repository from GitHub and run the [demo locally](examples/git).
+Another way to experiment with OasisMenu is to clone the repository from GitHub and run the [demo locally](demo#clone-oasismenu).
 
 Using the demo, you can adjust different configurations and see the results in real-time. It is a great way to get a sense of how OasisMenu works and to determine if it is the right fit for your project.
 

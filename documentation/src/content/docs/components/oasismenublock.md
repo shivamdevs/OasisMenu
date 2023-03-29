@@ -3,7 +3,11 @@ title: "OasisMenuBlock"
 description: "Know more about OasisMenuBlock and how to use it"
 ---
 
-The `OasisMenuBlock` component is a container for all `OasisMenuTrigger` and `OasisMenu` components in your application. It acts as a parent where all the processing happens. Here's an example of how to use it:
+The `OasisMenuBlock` component is a container for all `OasisMenuTrigger` and `OasisMenu` components in your application. It acts as a parent where all the processing happens.
+
+## Usage
+
+Here's an example of how to use it:
 
 ```jsx
 import { OasisMenuBlock } from 'oasismenu';

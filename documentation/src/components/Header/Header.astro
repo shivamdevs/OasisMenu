@@ -1,9 +1,9 @@
 ---
-import { SITE } from "../../consts";
+import { SITE, PROJECT_BASE_URL } from "../../consts";
 import AstroLogo from "./AstroLogo.astro";
 import SkipToContent from "./SkipToContent.astro";
 import SidebarToggle from "./SidebarToggle";
-import Search from "./Search";
+// import Search from "./Search";
 import ThemeToggle from "./ThemeToggleButton";
 
 type Props = {
@@ -20,18 +20,21 @@ const { currentPage } = Astro.props;
 			<SidebarToggle client:idle />
 		</div>
 		<div class="logo flex">
-			<a href="/oasismenu/getting-started">
+			<a href={`/${PROJECT_BASE_URL}/getting-started`}>
 				<AstroLogo size={40} />
 				<h1>{SITE.title ?? "Documentation"}</h1>
 			</a>
 		</div>
 		<div style="flex-grow: 1;"></div>
 		<div style="margin: 2rem 0; text-align: center;">
+			<a href="https://docs.myoasis.tech" style="text-decoration: none;"><i class="fas fa-arrow-left">&nbsp;</i> Oasis Docs</a>
+		</div>
+		<div style="margin: 2rem 0; text-align: center;">
 			<ThemeToggle client:visible />
 		</div>
-		<div class="search-item">
+		<!-- <div class="search-item">
 			<Search client:idle />
-		</div>
+		</div> -->
 	</nav>
 </header>
 
@@ -94,7 +97,6 @@ const { currentPage } = Astro.props;
 		justify-content: flex-end;
 		gap: 1em;
 		width: 100%;
-		max-width: 92em;
 		padding: 0 1rem;
 	}
 
