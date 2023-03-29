@@ -135,12 +135,12 @@
 }
 
 
-.oasismenu[data-animation]:not([data-animation=""]) {
+.oasismenu[data-animation]:not([data-animation=""]):not([data-animation="none"]) {
     visibility: hidden;
     opacity: 0;
 }
 
-.oasismenu[data-animation]:not([data-animation=""])[data-visible=true] {
+.oasismenu[data-animation]:not([data-animation=""]):not([data-animation="none"])[data-visible=true] {
     visibility: visible;
     opacity: 1;
 }

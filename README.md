@@ -2,6 +2,13 @@
 
 OasisMenu is a lightweight and customizable context menu implementation for React. It allows users to easily add context menus to their projects, making it easier for users to access actions and options relevant to the context in which they are working.
 
+## Documentation and Examples
+
+If you're looking for more information on how to use OasisMenu, you can check out the following resources:
+
+* **[Official Documentation](https://docs.myoasis.tech/oasismenu)** - This is the official documentation for OasisMenu. It provides detailed information on how to use and customize the component.
+* **[Demo Example](https://demo.myoasis.tech/oasismenu)** - This is a live demo of the OasisMenu component in action. You can interact with the menu and see how it looks and behaves with the added styles and functionality.
+
 ## Installation
 
 To install OasisMenu, simply run the following command:
@@ -40,7 +47,7 @@ function App() {
 export default App;
 ```
 
-This is just a basic layout. OasisMenu offers a wide range of customization options, so be sure to check out the [official documentation](https://github.com/shivamdevs/OasisMenu/blob/main/README.md) to learn more.
+This is just a basic layout. OasisMenu offers a wide range of customization options, so be sure to check out the [official documentation](https://docs.myoasis.tech/oasismenu) to learn more.
 
 ### Components
 

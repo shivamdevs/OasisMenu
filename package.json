@@ -1,6 +1,6 @@
 {
   "name": "oasismenu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "OasisMenu is a lightweight and customizable context menu implementation for React.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -37,5 +37,5 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
-  "homepage": "https://github.com/shivamdevs/OasisMenu#readme"
+  "homepage": "https://docs.myoasis.tech/oasismenu"
 }
