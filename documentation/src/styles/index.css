@@ -234,7 +234,7 @@ table {
 	padding: var(--padding-block) 0;
 	margin: 0;
 	border: 1px solid var(--theme-box-border);
-	box-shadow: 0 0 0 1px var(--theme-box-border);
+	/* box-shadow: 0 0 0 1px var(--theme-box-border); */
 	border-radius: 8px;
 	border-collapse: collapse;
 	overflow: hidden;

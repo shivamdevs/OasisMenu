@@ -79,6 +79,35 @@ const currentUrl = currentPage.endsWith("/")
 	.content :is(ul, ol) {
 		padding-inline-start: 2.25rem;
 	}
+
+	.content pre,
+	.content table {
+		max-width: calc(100vw - 0.8rem);
+		margin-inline: auto;
+	}
+
+	.content table {
+		overflow-x: auto;
+		display: block;
+		padding-block: 0;
+	}
+
+	.content table thead th:last-child {
+		min-width: 200px;
+	}
+
+	.content table tr > *:first-child {
+		border-left: none;
+	}
+	.content table tr > *:last-child {
+		border-right: none;
+	}
+	.content table thead th {
+		border-top: none;
+	}
+	.content table tbody td {
+		border-bottom: none;
+	}
 </style>
 
 <style>
