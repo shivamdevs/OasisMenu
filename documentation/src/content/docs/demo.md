@@ -3,7 +3,7 @@ title: "OasisMenu Examples"
 description: "How to use OasisMenu with demo examples"
 ---
 
-To visualize `OasisMenu` live, visit the [Demo page](https://demo.myoasis.tech/oasismenu) in your web browser.
+To visualize `OasisMenu` live, visit the [Demo page](https://docs.myoasis.tech/demo/oasismenu) in your web browser.
 
 The demo page should display the `OasisMenu` component with the added styles and functionality. You can interact with the menu to see how it works and looks with the added styles.
 

@@ -7,7 +7,7 @@ OasisMenu is a lightweight and customizable context menu implementation for Reac
 If you're looking for more information on how to use OasisMenu, you can check out the following resources:
 
 * **[Official Documentation](https://docs.myoasis.tech/oasismenu)** - This is the official documentation for OasisMenu. It provides detailed information on how to use and customize the component.
-* **[Demo Example](https://demo.myoasis.tech/oasismenu)** - This is a live demo of the OasisMenu component in action. You can interact with the menu and see how it looks and behaves with the added styles and functionality.
+* **[Demo Example](https://docs.myoasis.tech/demo/oasismenu)** - This is a live demo of the OasisMenu component in action. You can interact with the menu and see how it looks and behaves with the added styles and functionality.
 
 ## Installation
 
