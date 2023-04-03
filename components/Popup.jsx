@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import MenuContext from './core/context';
+import Item from './Item';
+import Break from './Break';
 
 function Popup({ data, name }) {
 
@@ -46,7 +48,7 @@ function Popup({ data, name }) {
                 onClick={e => e.stopPropagation()}
             >
                 {React.Children.map(children, (child, index) => {
-                    if (React.isValidElement(child)) {
+                    if (React.isValidElement(child) && (child.type === Item || child.type === Break)) {
                         return React.cloneElement(child, {
                             object: data,
                             classIndex: index,

@@ -65,7 +65,7 @@ function Child({ child, data = {} }) {
             const object = getStorage(name);
 
             if (onTrigger && onTrigger(e, object) === false) return;
-            if (!object?.popup?.children?.length) return;
+            if (!object?.popup?.children) return;
 
             e.preventDefault();
             e.stopPropagation();

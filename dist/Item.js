@@ -57,13 +57,13 @@ function Item(_ref) {
     e.preventDefault();
     if (!preventClose && !disabled) {
       closePopup(object.key, object);
-      setTimeout(function () {
-        var _object$popup2, _object$popup2$events;
-        onClick && onClick(data, object);
-        onItemClick && onItemClick(data, object);
-        (object === null || object === void 0 ? void 0 : (_object$popup2 = object.popup) === null || _object$popup2 === void 0 ? void 0 : (_object$popup2$events = _object$popup2.events) === null || _object$popup2$events === void 0 ? void 0 : _object$popup2$events.onSelect) && object.popup.events.onSelect(data, object);
-      }, 10);
     }
+    if (!disabled) setTimeout(function () {
+      var _object$popup2, _object$popup2$events;
+      onClick && onClick(data, object);
+      onItemClick && onItemClick(data, object);
+      (object === null || object === void 0 ? void 0 : (_object$popup2 = object.popup) === null || _object$popup2 === void 0 ? void 0 : (_object$popup2$events = _object$popup2.events) === null || _object$popup2$events === void 0 ? void 0 : _object$popup2$events.onSelect) && object.popup.events.onSelect(data, object);
+    }, 10);
   };
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     type: "button",
@@ -88,7 +88,7 @@ function Item(_ref) {
     className: "oasisafter ".concat(after ? "oasisafterhave" : "")
   }, after), /*#__PURE__*/_react["default"].createElement("div", {
     className: "oasisstatus ".concat(statusIcon || checked ? "oasisstatushave" : "")
-  }, checked && /*#__PURE__*/_react["default"].createElement("svg", {
+  }, statusIcon ? statusIcon : checked && /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 512 512",
     width: "1em",

@@ -72,10 +72,10 @@ function Child(_ref2) {
     addElements(name, element);
     var capture = ['click', 'dblclick', 'mousedown', 'mouseenter', 'mouseleave', 'keydown', 'keyup', 'submit', 'change', 'load', 'contextmenu'].includes(trigger) ? trigger : "contextmenu";
     var triggerObject = function triggerObject(e) {
-      var _object$popup, _object$popup$childre;
+      var _object$popup;
       var object = getStorage(name);
-      if (onTrigger && onTrigger(e) === false) return;
-      if (!(object !== null && object !== void 0 && (_object$popup = object.popup) !== null && _object$popup !== void 0 && (_object$popup$childre = _object$popup.children) !== null && _object$popup$childre !== void 0 && _object$popup$childre.length)) return;
+      if (onTrigger && onTrigger(e, object) === false) return;
+      if (!(object !== null && object !== void 0 && (_object$popup = object.popup) !== null && _object$popup !== void 0 && _object$popup.children)) return;
       e.preventDefault();
       e.stopPropagation();
       if (toggled) return toggled = false;
