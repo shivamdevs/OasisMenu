@@ -91,6 +91,10 @@ export const SIDEBAR: Sidebar = {
 			link: 'support'
 		},
 		{
+			text: 'Changelog',
+			link: 'support/changelog'
+		},
+		{
 			text: 'Limitations',
 			link: 'support/limitations'
 		},

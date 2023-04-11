@@ -92,7 +92,7 @@ The `OasisMenu` component accepts the following props:
 | className | string | - | An optional CSS class to apply to the `OasisMenu` component. |
 | noStyle | boolean | false | If `true`, the default styles for the `OasisMenu` will not be applied. |
 | theme | string | 'default' | The color theme for the `OasisMenu`. Available options are: 'darkangel', 'default', 'fire', 'forest', 'midnight', 'moonlight', 'nightfall', 'none', 'ocean', 'rose', 'royal', 'sky', 'space', 'sunlight', or a custom theme name. |
-| animation | string | 'none' | The animation style for the `OasisMenu`. Available options are: 'slide-in', 'flip-in', 'drop-in', 'bounce-in', or 'none'. |
+| animation | string | 'slide-in' | The animation style for the `OasisMenu`. Available options are: 'slide-in', 'flip-in', 'drop-in', 'bounce-in', or 'none'. |
 | itemClass | string | - | An optional CSS class to apply to each `OasisMenuItem` component. |
 | onItemClick | function | null | A callback function that will be called when an `OasisMenuItem` is clicked. |
 | onItemHover | function | null | A callback function that will be called when an `OasisMenuItem` is hovered over. |

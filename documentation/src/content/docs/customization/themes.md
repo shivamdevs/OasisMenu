@@ -31,7 +31,7 @@ import 'oasismenu/themes/darkangel.css';
 </OasisMenu>
 ```
 
-This will load the CSS rules for the darkangel theme, and apply them to all OasisMenu and OasisMenuItem components in your application.
+This will load the CSS rules for the `darkangel` theme, and apply them to the selected `OasisMenu` and `OasisMenuItem` components in your application.
 
 ### Styling Variables
 
