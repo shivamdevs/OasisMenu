@@ -1,9 +1,9 @@
 {
   "name": "oasismenu",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "OasisMenu is a lightweight and customizable context menu implementation for React.",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "build": "babel --out-dir=dist components",
     "test": "echo \"Error: no test specified\" && exit 1"

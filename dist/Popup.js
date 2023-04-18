@@ -70,6 +70,7 @@ function Popup(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "oasismenu ".concat(options.className, " ").concat(visible ? "oasisopen" : ""),
+    "data-oasismenu-styled": !options.noStyle,
     "data-visible": visible,
     "data-theme": options.theme,
     "data-nostyle": options.noStyle,

@@ -5,7 +5,7 @@ import OasisMenu from "./Menu";
 import OasisMenuItem from "./Item";
 import OasisMenuBreak from "./Break";
 
-import "../styles/default.css";
+// import "../styles/default.css";
 import "../themes/default.css";
 
 export {

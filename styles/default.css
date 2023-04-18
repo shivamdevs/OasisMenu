@@ -1,9 +1,9 @@
-.oasismenu,
-.oasismenu * {
+[data-oasismenu-styled=true],
+[data-oasismenu-styled=true] * {
     box-sizing: border-box;
 }
 
-.oasismenu[data-nostyle=false] {
+[data-oasismenu-styled=true] {
     background-color: var(--bg-popup);
     transition: 200ms;
     max-width: 100vw;
@@ -16,12 +16,12 @@
 
 }
 
-.oasismenu[data-nostyle=false]::-webkit-scrollbar {
+[data-oasismenu-styled=true]::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-.oasismenu[data-nostyle=false]::-webkit-scrollbar-thumb {
+[data-oasismenu-styled=true]::-webkit-scrollbar-thumb {
     background: var(--scroll-popup);
     background-clip: padding-box;
     border: 3px solid transparent;
@@ -31,13 +31,13 @@
     min-width: 40px;
 }
 
-.oasismenu[data-nostyle=false]::-webkit-scrollbar-track,
-.oasismenu[data-nostyle=false]::-webkit-scrollbar-track:hover {
+[data-oasismenu-styled=true]::-webkit-scrollbar-track,
+[data-oasismenu-styled=true]::-webkit-scrollbar-track:hover {
     background: none;
     border: none;
 }
 
-.oasismenu[data-nostyle=false] .oasisbreak {
+[data-oasismenu-styled=true] .oasisbreak {
     min-height: 1px;
     max-height: 1px;
     height: 1px;
@@ -46,11 +46,11 @@
     margin-block: 5px;
 }
 
-.oasismenu[data-nostyle=false] div:has(> .oasisitem) {
+[data-oasismenu-styled=true] div:has(> .oasisitem) {
     padding-inline: 5px;
 }
 
-.oasismenu[data-nostyle=false] .oasisitem {
+[data-oasismenu-styled=true] .oasisitem {
     background-color: var(--bg-popup);
     color: var(--color-item-primary);
     display: flex;
@@ -69,18 +69,18 @@
     padding: 5px 10px;
 }
 
-.oasismenu[data-nostyle=false] .oasisitem:disabled {
+[data-oasismenu-styled=true] .oasisitem:disabled {
     background-color: var(--bg-item-disabled);
     color: var(--color-item-disabled);
 }
 
-.oasismenu[data-nostyle=false] .oasisitem:not(:disabled).oasishovered {
+[data-oasismenu-styled=true] .oasisitem:not(:disabled).oasishovered {
     background-color: var(--bg-item-hover);
     cursor: pointer;
 }
 
-.oasismenu[data-nostyle=false] .oasisicon,
-.oasismenu[data-nostyle=false] .oasisstatus {
+[data-oasismenu-styled=true] .oasisicon,
+[data-oasismenu-styled=true] .oasisstatus {
     min-width: 20px;
     display: inline-flex;
     align-items: center;
@@ -88,9 +88,9 @@
     flex-wrap: nowrap;
 }
 
-.oasismenu[data-nostyle=false] .oasisicon,
-.oasismenu[data-nostyle=false] .oasisstatus,
-.oasismenu[data-nostyle=false] .oasiscontent {
+[data-oasismenu-styled=true] .oasisicon,
+[data-oasismenu-styled=true] .oasisstatus,
+[data-oasismenu-styled=true] .oasiscontent {
     white-space: nowrap;
     word-wrap: initial;
     overflow: hidden;
@@ -98,83 +98,83 @@
     text-overflow: ellipsis;
 }
 
-.oasismenu[data-nostyle=false] .oasiscontent {
+[data-oasismenu-styled=true] .oasiscontent {
     flex: 1;
     text-align: left;
 }
 
-.oasismenu[data-nostyle=false] .oasisstatus {
+[data-oasismenu-styled=true] .oasisstatus {
     font-size: 0.9em;
 }
 
-.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisicon,
-.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisstatus {
+[data-oasismenu-styled=true] .oasisitem:not(:disabled):not(.oasishovered) .oasisicon,
+[data-oasismenu-styled=true] .oasisitem:not(:disabled):not(.oasishovered) .oasisstatus {
     color: var(--color-item-secondary);
 }
 
-.oasismenu[data-nostyle=false] .oasisafter:not(:empty) {
+[data-oasismenu-styled=true] .oasisafter:not(:empty) {
     margin-left: 30px;
     white-space: nowrap;
     font-size: 0.8em;
     transition: inherit;
 }
 
-.oasismenu[data-nostyle=false] .oasisitem:not(:disabled):not(.oasishovered) .oasisafter {
+[data-oasismenu-styled=true] .oasisitem:not(:disabled):not(.oasishovered) .oasisafter {
     color: var(--color-item-tertiary);
 }
 
-.oasismenu[data-nostyle=false]:not(:has(.oasisiconhave)) .oasisicon,
-.oasismenu[data-nostyle=false]:not(:has(.oasisstatushave)) .oasisstatus,
-.oasismenu[data-nostyle=false]:not(:has(.oasisafterhave)) .oasisafter {
+[data-oasismenu-styled=true]:not(:has(.oasisiconhave)) .oasisicon,
+[data-oasismenu-styled=true]:not(:has(.oasisstatushave)) .oasisstatus,
+[data-oasismenu-styled=true]:not(:has(.oasisafterhave)) .oasisafter {
     display: none;
 }
 
 
-.oasismenu[data-nostyle=false]:not(:has(.oasisiconhave):has(.oasisstatushave):has(.oasisafterhave)) .oasisitem {
+[data-oasismenu-styled=true]:not(:has(.oasisiconhave):has(.oasisstatushave):has(.oasisafterhave)) .oasisitem {
     padding-inline: 15px;
 }
 
 
-.oasismenu[data-animation]:not([data-animation=""]):not([data-animation="none"]) {
+[data-oasismenu-styled=true][data-animation]:not([data-animation=""]):not([data-animation="none"]) {
     visibility: hidden;
     opacity: 0;
 }
 
-.oasismenu[data-animation]:not([data-animation=""]):not([data-animation="none"])[data-visible=true] {
+[data-oasismenu-styled=true][data-animation]:not([data-animation=""]):not([data-animation="none"])[data-visible=true] {
     visibility: visible;
     opacity: 1;
 }
 
-.oasismenu[data-animation=slide-in] {
+[data-oasismenu-styled=true][data-animation=slide-in] {
     transform: translateY(-10px);
 }
 
-.oasismenu[data-animation=slide-in][data-visible=true] {
+[data-oasismenu-styled=true][data-animation=slide-in][data-visible=true] {
     transform: translateY(0);
 }
 
-.oasismenu[data-animation=flip-in] {
+[data-oasismenu-styled=true][data-animation=flip-in] {
     transform: rotateX(-90deg);
     transform-origin: top;
 }
 
-.oasismenu[data-animation=flip-in][data-visible=true] {
+[data-oasismenu-styled=true][data-animation=flip-in][data-visible=true] {
     transform: rotateX(0);
 }
 
-.oasismenu[data-animation=drop-in] {
+[data-oasismenu-styled=true][data-animation=drop-in] {
     transform: translateY(-100%);
 }
 
-.oasismenu[data-animation=drop-in][data-visible=true] {
+[data-oasismenu-styled=true][data-animation=drop-in][data-visible=true] {
     transform: translateY(0);
 }
 
-.oasismenu[data-animation=bounce-in] {
+[data-oasismenu-styled=true][data-animation=bounce-in] {
     transform: translateY(-500px);
 }
 
-.oasismenu[data-animation=bounce-in][data-visible=true] {
+[data-oasismenu-styled=true][data-animation=bounce-in][data-visible=true] {
     animation: oasismenu-bounce-in 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 

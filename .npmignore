@@ -4,6 +4,8 @@ components/
 components
 example/
 example
+styles/
+styles
 documentation/
 documentation
 package-lock.json*

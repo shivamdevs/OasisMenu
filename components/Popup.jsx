@@ -41,6 +41,7 @@ function Popup({ data, name }) {
         >
             <div
                 className={`oasismenu ${options.className} ${visible ? "oasisopen" : ""}`}
+                data-oasismenu-styled={!options.noStyle}
                 data-visible={visible}
                 data-theme={options.theme}
                 data-nostyle={options.noStyle}

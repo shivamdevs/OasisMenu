@@ -39,6 +39,5 @@ var _Trigger = _interopRequireDefault(require("./Trigger"));
 var _Menu = _interopRequireDefault(require("./Menu"));
 var _Item = _interopRequireDefault(require("./Item"));
 var _Break = _interopRequireDefault(require("./Break"));
-require("../styles/default.css");
 require("../themes/default.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
