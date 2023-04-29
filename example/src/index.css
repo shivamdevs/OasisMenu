@@ -18,7 +18,3 @@
 .bottom {
     inset: 53vh var(--fix) var(--fix);
 }
-
-.oasismenu {
-    background-color: red;
-}
