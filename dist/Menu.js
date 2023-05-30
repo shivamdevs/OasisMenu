@@ -54,7 +54,8 @@ function Menu(_ref) {
     _ref$onSelect = _ref.onSelect,
     onSelect = _ref$onSelect === void 0 ? null : _ref$onSelect;
   var _useContext = (0, _react.useContext)(_context["default"]),
-    updateStorage = _useContext.updateStorage;
+    updateStorage = _useContext.updateStorage,
+    closePopup = _useContext.closePopup;
   (0, _react.useEffect)(function () {
     updateStorage(name, {
       popup: {
@@ -84,6 +85,9 @@ function Menu(_ref) {
           beforeDestroy: beforeDestroy,
           beforeConstruct: beforeConstruct
         }
+      },
+      close: function close() {
+        closePopup(name, this);
       }
     });
   }, [name, theme, children, className, beforeHide, beforeShow, beforeDestroy, beforeConstruct, onShown, onHidden, onDestroy, onConstruct, onOpen, onClose, onSelect, noStyle, animation, itemClass, onItemClick, onItemHover, itemHoverClass, itemKeepHovered]);

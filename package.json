@@ -1,6 +1,6 @@
 {
   "name": "oasismenu",
-  "version": "1.2.1",
+  "version": "1.2.4",
   "description": "OasisMenu is a lightweight and customizable context menu implementation for React.",
   "main": "dist/index.js",
   "types": "index.d.ts",

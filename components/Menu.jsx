@@ -29,7 +29,8 @@ function Menu({
     onClose = null,
     onSelect = null
 }) {
-    const { updateStorage } = useContext(MenuContext);
+    const { updateStorage, closePopup } = useContext(MenuContext);
+
     useEffect(() => {
         updateStorage(name, {
             popup: {
@@ -60,6 +61,7 @@ function Menu({
                     beforeConstruct,
                 },
             },
+            close: function() { closePopup(name, this) },
         });
     }, [name, theme, children, className, beforeHide, beforeShow, beforeDestroy, beforeConstruct, onShown, onHidden, onDestroy, onConstruct, onOpen, onClose, onSelect, noStyle, animation, itemClass, onItemClick, onItemHover, itemHoverClass, itemKeepHovered]);
     return null;
