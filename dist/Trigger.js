@@ -13,18 +13,13 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function Trigger(_ref) {
   var name = _ref.name,
     children = _ref.children,
-    _ref$inset = _ref.inset,
-    inset = _ref$inset === void 0 ? false : _ref$inset,
-    _ref$toggle = _ref.toggle,
-    toggle = _ref$toggle === void 0 ? false : _ref$toggle,
-    _ref$onTrigger = _ref.onTrigger,
-    onTrigger = _ref$onTrigger === void 0 ? null : _ref$onTrigger,
-    _ref$placement = _ref.placement,
-    placement = _ref$placement === void 0 ? null : _ref$placement,
+    inset = _ref.inset,
+    toggle = _ref.toggle,
+    onTrigger = _ref.onTrigger,
+    placement = _ref.placement,
     _ref$shiftDistance = _ref.shiftDistance,
     shiftDistance = _ref$shiftDistance === void 0 ? 10 : _ref$shiftDistance,
-    _ref$trigger = _ref.trigger,
-    trigger = _ref$trigger === void 0 ? "contextmenu" : _ref$trigger;
+    trigger = _ref.trigger;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, _react["default"].Children.map(children, function (child, index) {
     if ( /*#__PURE__*/_react["default"].isValidElement(child)) {
       return /*#__PURE__*/_react["default"].createElement(Child, {
@@ -55,7 +50,7 @@ function Child(_ref2) {
   var name = data.name,
     inset = data.inset,
     toggle = data.toggle,
-    trigger = data.trigger,
+    triggerOrg = data.trigger,
     onTrigger = data.onTrigger,
     placement = data.placement,
     shiftDistance = data.shiftDistance;
@@ -64,7 +59,9 @@ function Child(_ref2) {
     updateStorage = _useContext.updateStorage,
     openPopup = _useContext.openPopup,
     closePopup = _useContext.closePopup,
-    addElements = _useContext.addElements;
+    addElements = _useContext.addElements,
+    defaultSettings = _useContext.defaultSettings;
+  var trigger = triggerOrg !== null && triggerOrg !== void 0 ? triggerOrg : defaultSettings.trigger;
   (0, _react.useEffect)(function () {
     if (!ref.current) return;
     var element = ref.current;
@@ -84,12 +81,12 @@ function Child(_ref2) {
         left = e.clientX;
       updateStorage(name, {
         modal: {
-          toggle: toggle,
+          toggle: toggle !== null && toggle !== void 0 ? toggle : defaultSettings.toggle,
           enabled: false,
           options: {
-            inset: inset,
-            placement: placement,
-            shiftDistance: shiftDistance
+            inset: inset !== null && inset !== void 0 ? inset : defaultSettings.inset,
+            placement: placement !== null && placement !== void 0 ? placement : defaultSettings.placement,
+            shiftDistance: shiftDistance !== null && shiftDistance !== void 0 ? shiftDistance : defaultSettings.shiftDistance
           },
           position: {
             top: top,
@@ -119,7 +116,7 @@ function Child(_ref2) {
       element.removeEventListener("scroll", toggleHandle);
       element.removeEventListener("resize", toggleHandle);
     };
-  }, [inset, name, onTrigger, placement, ref, shiftDistance, toggle, trigger]);
+  }, [defaultSettings.inset, defaultSettings.placement, defaultSettings.shiftDistance, defaultSettings.toggle, inset, name, onTrigger, placement, ref, shiftDistance, toggle, trigger]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].cloneElement(child, {
     ref: ref
   }));

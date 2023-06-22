@@ -6,7 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.calculatePopupPosition = calculatePopupPosition;
 exports.getPopupPosition = getPopupPosition;
 function calculatePopupPosition(popup, top, left) {
-  var rect = popup.getBoundingClientRect();
+  var rect;
+  try {
+    rect = popup.getBoundingClientRect();
+  } catch (e) {
+    return {
+      top: 0,
+      left: 0
+    };
+  }
   var _window = window,
     innerWidth = _window.innerWidth,
     innerHeight = _window.innerHeight;
@@ -41,11 +49,19 @@ function getPopupPosition(item, popup, _ref) {
   var position = _ref.placement,
     inset = _ref.inset,
     distance = _ref.shiftDistance;
-  var itemRect = item.getBoundingClientRect();
-  var popupRect = popup.getBoundingClientRect();
+  var padding = distance || 5;
+  var itemRect, popupRect;
+  try {
+    itemRect = item.getBoundingClientRect();
+    popupRect = popup.getBoundingClientRect();
+  } catch (e) {
+    return {
+      top: 0,
+      left: 0
+    };
+  }
   var popupWidth = popupRect.width;
   var popupHeight = popupRect.height;
-  var padding = distance || 5;
   if (inset) {
     return getInsetPopupPosition(itemRect, popupWidth, popupHeight, padding, position);
   } else {

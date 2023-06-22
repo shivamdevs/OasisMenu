@@ -1,5 +1,15 @@
 export function calculatePopupPosition(popup, top, left) {
-    const rect = popup.getBoundingClientRect();
+    let rect;
+
+    try {
+        rect = popup.getBoundingClientRect();
+    } catch (e) {
+        return {
+            top: 0,
+            left: 0,
+        };
+    }
+
     const { innerWidth, innerHeight } = window;
     const popupWidth = rect.width;
     const popupHeight = rect.height;
@@ -33,11 +43,21 @@ export function calculatePopupPosition(popup, top, left) {
 
 
 export function getPopupPosition(item, popup, { placement: position, inset, shiftDistance: distance }) {
-    const itemRect = item.getBoundingClientRect();
-    const popupRect = popup.getBoundingClientRect();
+    const padding = distance || 5;
+    let itemRect, popupRect;
+
+    try {
+        itemRect = item.getBoundingClientRect();
+        popupRect = popup.getBoundingClientRect();
+    } catch (e) {
+        return {
+            top: 0,
+            left: 0,
+        };
+    }
+
     const popupWidth = popupRect.width;
     const popupHeight = popupRect.height;
-    const padding = distance || 5;
 
     if (inset) {
         return getInsetPopupPosition(itemRect, popupWidth, popupHeight, padding, position);

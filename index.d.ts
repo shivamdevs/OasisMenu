@@ -50,6 +50,19 @@ declare module 'oasismenu' {
     children?: React.ReactNode;
   }
 
+  export interface OasisMenuProviderProps {
+    children?: React.ReactNode;
+    toggle?: boolean;
+    trigger?: 'click' | 'dblclick' | 'mousedown' | 'mouseenter' | 'mouseleave' | 'keydown' | 'keyup' | 'submit' | 'change' | 'load' | 'contextmenu';
+    placement?: 'top-left' | 'top' | 'top-right' | 'right-top' | 'right' | 'right-bottom' | 'bottom-right' | 'bottom' | 'bottom-left' | 'left-bottom' | 'left' | 'left-top' | 'center';
+    inset?: boolean;
+    shiftDistance?: number;
+    className?: string;
+    noStyle?: boolean;
+    theme?: 'darkangel' | 'default' | 'fire' | 'forest' | 'midnight' | 'moonlight' | 'nightfall' | 'none' | 'ocean' | 'rose' | 'royal' | 'sky' | 'space' | 'sunlight' | string;
+    animation?: 'slide-in' | 'flip-in' | 'drop-in' | 'bounce-in' | 'none' | string;
+  }
+
   export interface OasisMenuTriggerProps {
     children?: React.ReactNode;
     name: string;
@@ -61,6 +74,8 @@ declare module 'oasismenu' {
     shiftDistance?: number;
   }
 
+  const OasisMenuProvider: React.FC<OasisMenuProviderProps>;
+  export default OasisMenuProvider;
   export const OasisMenu: React.FC<OasisMenuProps>;
   export const OasisMenuItem: React.FC<OasisMenuItemProps>;
   export const OasisMenuBreak: React.FC<OasisMenuBreakProps>;

@@ -4,12 +4,12 @@ import MenuContext from './core/context';
 function Trigger({
     name,
     children,
-    inset = false,
-    toggle = false,
-    onTrigger = null,
-    placement = null,
+    inset,
+    toggle,
+    onTrigger,
+    placement,
     shiftDistance = 10,
-    trigger = "contextmenu",
+    trigger,
 }) {
     return (
         <>
@@ -36,9 +36,11 @@ export default Trigger;
 function Child({ child, data = {} }) {
     const ref = useRef();
 
-    const { name, inset, toggle, trigger, onTrigger, placement, shiftDistance } = data;
+    const { name, inset, toggle, trigger: triggerOrg, onTrigger, placement, shiftDistance } = data;
 
-    const { getStorage, updateStorage, openPopup, closePopup, addElements } = useContext(MenuContext);
+    const { getStorage, updateStorage, openPopup, closePopup, addElements, defaultSettings } = useContext(MenuContext);
+
+    const trigger = (triggerOrg ?? defaultSettings.trigger);
 
     useEffect(() => {
         if (!ref.current) return;
@@ -77,12 +79,12 @@ function Child({ child, data = {} }) {
 
             updateStorage(name, {
                 modal: {
-                    toggle,
+                    toggle: (toggle ?? defaultSettings.toggle),
                     enabled: false,
                     options: {
-                        inset,
-                        placement,
-                        shiftDistance,
+                        inset: (inset ?? defaultSettings.inset),
+                        placement: (placement ?? defaultSettings.placement),
+                        shiftDistance: (shiftDistance ?? defaultSettings.shiftDistance),
                     },
                     position: {
                         top,
@@ -114,7 +116,7 @@ function Child({ child, data = {} }) {
             element.removeEventListener("scroll", toggleHandle);
             element.removeEventListener("resize", toggleHandle);
         };
-    }, [inset, name, onTrigger, placement, ref, shiftDistance, toggle, trigger]);
+    }, [defaultSettings.inset, defaultSettings.placement, defaultSettings.shiftDistance, defaultSettings.toggle, inset, name, onTrigger, placement, ref, shiftDistance, toggle, trigger]);
 
     return (
         <>

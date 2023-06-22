@@ -33,7 +33,9 @@ Object.defineProperty(exports, "OasisMenuTrigger", {
     return _Trigger["default"];
   }
 });
+exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
+var _Provider = _interopRequireDefault(require("./Provider"));
 var _Block = _interopRequireDefault(require("./Block"));
 var _Trigger = _interopRequireDefault(require("./Trigger"));
 var _Menu = _interopRequireDefault(require("./Menu"));
@@ -41,3 +43,6 @@ var _Item = _interopRequireDefault(require("./Item"));
 var _Break = _interopRequireDefault(require("./Break"));
 require("../themes/default.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+// import "../styles/default.css";
+var _default = _Provider["default"];
+exports["default"] = _default;

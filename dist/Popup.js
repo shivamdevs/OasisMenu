@@ -19,6 +19,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Popup(_ref) {
+  var _options$noStyle, _options$theme, _options$noStyle2, _options$animation;
   var data = _ref.data,
     name = _ref.name;
   var popup = (0, _react.useRef)();
@@ -28,7 +29,8 @@ function Popup(_ref) {
     setHoveredIndex = _useState2[1];
   var _useContext = (0, _react.useContext)(_context["default"]),
     updateStorage = _useContext.updateStorage,
-    closePopup = _useContext.closePopup;
+    closePopup = _useContext.closePopup,
+    defaultSettings = _useContext.defaultSettings;
   var _ref2 = data.modal || {},
     _ref2$position = _ref2.position,
     position = _ref2$position === void 0 ? {} : _ref2$position,
@@ -37,6 +39,7 @@ function Popup(_ref) {
   var _ref3 = data.popup || {},
     children = _ref3.children,
     options = _ref3.options;
+  console.log(options.theme, defaultSettings.theme);
   (0, _react.useEffect)(function () {
     if (popup.current) {
       updateStorage(name, {
@@ -69,12 +72,12 @@ function Popup(_ref) {
       return closePopup(name, data);
     }
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "oasismenu ".concat(options.className, " ").concat(visible ? "oasisopen" : ""),
-    "data-oasismenu-styled": !options.noStyle,
+    className: "oasismenu ".concat(options.className, " ").concat(defaultSettings.className, " ").concat(visible ? "oasisopen" : ""),
+    "data-oasismenu-styled": !((_options$noStyle = options.noStyle) !== null && _options$noStyle !== void 0 ? _options$noStyle : defaultSettings.noStyle),
     "data-visible": visible,
-    "data-theme": options.theme,
-    "data-nostyle": options.noStyle,
-    "data-animation": options.animation,
+    "data-theme": (_options$theme = options.theme) !== null && _options$theme !== void 0 ? _options$theme : defaultSettings.theme,
+    "data-nostyle": (_options$noStyle2 = options.noStyle) !== null && _options$noStyle2 !== void 0 ? _options$noStyle2 : defaultSettings.noStyle,
+    "data-animation": (_options$animation = options.animation) !== null && _options$animation !== void 0 ? _options$animation : defaultSettings.animation,
     onClick: function onClick(e) {
       return e.stopPropagation();
     }

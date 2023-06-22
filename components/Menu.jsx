@@ -5,9 +5,9 @@ function Menu({
     name,
     children,
     className = "",
-    noStyle = false,
-    theme = "default",
-    animation = "slide-in",
+    noStyle,
+    theme,
+    animation,
 
     itemClass = "",
     onItemClick = null,

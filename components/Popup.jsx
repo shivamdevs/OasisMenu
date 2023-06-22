@@ -8,10 +8,12 @@ function Popup({ data, name }) {
     const popup = useRef();
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const { updateStorage, closePopup } = useContext(MenuContext);
+    const { updateStorage, closePopup, defaultSettings } = useContext(MenuContext);
 
     const { position = {}, visible = false } = data.modal || {};
     const { children, options } = data.popup || {};
+
+    console.log(options.theme, defaultSettings.theme);
 
     useEffect(() => {
         if (popup.current) {
@@ -40,12 +42,12 @@ function Popup({ data, name }) {
             onClick={() => closePopup(name, data)}
         >
             <div
-                className={`oasismenu ${options.className} ${visible ? "oasisopen" : ""}`}
-                data-oasismenu-styled={!options.noStyle}
+                className={`oasismenu ${options.className} ${defaultSettings.className} ${visible ? "oasisopen" : ""}`}
+                data-oasismenu-styled={!(options.noStyle ?? defaultSettings.noStyle)}
                 data-visible={visible}
-                data-theme={options.theme}
-                data-nostyle={options.noStyle}
-                data-animation={options.animation}
+                data-theme={(options.theme ?? defaultSettings.theme)}
+                data-nostyle={(options.noStyle ?? defaultSettings.noStyle)}
+                data-animation={(options.animation ?? defaultSettings.animation)}
                 onClick={e => e.stopPropagation()}
             >
                 {React.Children.map(children, (child, index) => {
