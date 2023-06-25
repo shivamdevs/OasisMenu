@@ -39,7 +39,6 @@ function Popup(_ref) {
   var _ref3 = data.popup || {},
     children = _ref3.children,
     options = _ref3.options;
-  console.log(options.theme, defaultSettings.theme);
   (0, _react.useEffect)(function () {
     if (popup.current) {
       updateStorage(name, {

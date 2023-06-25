@@ -102,7 +102,7 @@ function Child(_ref2) {
       var _object$modal, _object$modal2;
       var object = getStorage(name);
       if (object !== null && object !== void 0 && (_object$modal = object.modal) !== null && _object$modal !== void 0 && _object$modal.enabled || object !== null && object !== void 0 && (_object$modal2 = object.modal) !== null && _object$modal2 !== void 0 && _object$modal2.visible) {
-        if (toggle && ((e === null || e === void 0 ? void 0 : e.button) === 0 && capture === "click" || (e === null || e === void 0 ? void 0 : e.button) === 2 && capture === "contextmenu")) toggled = true;
+        if ((toggle !== null && toggle !== void 0 ? toggle : defaultSettings.toggle) && ((e === null || e === void 0 ? void 0 : e.button) === 0 && capture === "click" || (e === null || e === void 0 ? void 0 : e.button) === 2 && capture === "contextmenu")) toggled = true;
         closePopup(name, object);
       }
     };

@@ -13,8 +13,6 @@ function Popup({ data, name }) {
     const { position = {}, visible = false } = data.modal || {};
     const { children, options } = data.popup || {};
 
-    console.log(options.theme, defaultSettings.theme);
-
     useEffect(() => {
         if (popup.current) {
             updateStorage(name, {

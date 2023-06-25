@@ -100,7 +100,7 @@ function Child({ child, data = {} }) {
         const toggleHandle = (e) => {
             const object = getStorage(name);
             if (object?.modal?.enabled || object?.modal?.visible) {
-                if (toggle && ((e?.button === 0 && capture === "click") || (e?.button === 2 && capture === "contextmenu"))) (toggled = true);
+                if ((toggle ?? defaultSettings.toggle) && ((e?.button === 0 && capture === "click") || (e?.button === 2 && capture === "contextmenu"))) (toggled = true);
                 closePopup(name, object);
             }
         };
